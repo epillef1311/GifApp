@@ -6,6 +6,8 @@ class Gif{
   final String? displayName;
   final String? username;
   final String? userProfileUrl;
+  final String? height;
+  final String? width;
 
   Gif({
     required this.id,
@@ -15,5 +17,7 @@ class Gif{
     this.displayName,
     this.username,
     this.userProfileUrl,
+    this.height,
+    this.width,
 });
 }

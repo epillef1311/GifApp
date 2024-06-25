@@ -9,8 +9,19 @@ class GiphyRepository {
 
   GiphyRepository({required this.client, required this.mapper,});
 
-  Future<List<Gif>> getTrending({int? limit, int? offset}) async{
+  Future<List<Gif>> getTrending({int? limit, int? offset}) async {
     final response = await client.getTrending(limit: limit, offset: offset);
+    return mapper.toGifs(response.data);
+  }
+
+  Future<List<Gif>> getReactions({int? limit, int? offset}) async {
+    final response = await client.getReactions(limit: limit, offset: offset);
+    return mapper.toGifs(response.data);
+  }
+
+  Future<List<Gif>> getEntertainment({int? limit, int? offset}) async {
+    final response = await client.getEntertainment(
+        limit: limit, offset: offset);
     return mapper.toGifs(response.data);
   }
 }

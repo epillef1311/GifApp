@@ -29,6 +29,8 @@ class NetworkMapper{
         displayName: entity.user?.displayName,
         username: entity.user?.username,
         userProfileUrl: entity.user?.profileUrl,
+        height: entity.images.previewGif.height,
+        width: entity.images.previewGif.width,
       );
     } catch (e) {
       throw MapperException<GifEntity, Gif>(e.toString());
